@@ -7,7 +7,6 @@ import StreamList from '../stream/StreamList/StreamList';
 import StreamShow from '../stream/StreamShow/StreamShow';
 import Header from '../Header/Header';
 
-// client ID: 649260648596-842n3gt5a0dqu2nasc2ekbvrev8vngj5.apps.googleusercontent.com
 const App = () => {
   return (
     <div>
