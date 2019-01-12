@@ -5,7 +5,7 @@ import Input from '../../Input/Input';
 import classes from './StreamCreate.module.css';
 
 class StreamCreate extends React.Component {
-  renderInput = ({ input }, type, name) => {
+  renderInput = ({ input, meta }, type, name) => {
     return (
       <Fragment>
         <label>{name}</label>
@@ -15,8 +15,15 @@ class StreamCreate extends React.Component {
           change={input.onChange}
           value={input.value}
         />
+        {this.renderError(meta)}
       </Fragment>
     );
+  };
+
+  renderError = ({ touched, error }) => {
+    if (touched && error) {
+      return <p>{error}</p>;
+    }
   };
 
   onSubmit = formValue => {
@@ -47,4 +54,18 @@ class StreamCreate extends React.Component {
   }
 }
 
-export default reduxForm({ form: 'StreamCreate' })(StreamCreate);
+const validate = formValues => {
+  const errors = {};
+
+  if (!formValues.title) {
+    errors.title = 'Please enter a title';
+  }
+
+  if (!formValues.description) {
+    errors.description = 'Please enter a description';
+  }
+
+  return errors;
+};
+
+export default reduxForm({ form: 'StreamCreate', validate })(StreamCreate);

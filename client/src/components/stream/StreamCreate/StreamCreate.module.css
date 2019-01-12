@@ -20,6 +20,11 @@
   text-transform: capitalize;
 }
 
+.card p {
+  font-size: 1.4rem;
+  color: red;
+}
+
 .button {
   padding: 1rem;
   font-size: 1.5rem;
