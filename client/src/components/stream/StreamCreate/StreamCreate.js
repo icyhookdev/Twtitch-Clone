@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 
 import Input from '../../Input/Input';
 import classes from './StreamCreate.module.css';
-import stream from '../../../api/stream';
 import { createStream } from '../../../actions/';
 
 class StreamCreate extends React.Component {
