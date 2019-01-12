@@ -1,8 +1,11 @@
 import React, { Fragment } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 
 import Input from '../../Input/Input';
 import classes from './StreamCreate.module.css';
+import stream from '../../../api/stream';
+import { createStream } from '../../../actions/';
 
 class StreamCreate extends React.Component {
   renderInput = ({ input, meta }, type, name) => {
@@ -26,11 +29,12 @@ class StreamCreate extends React.Component {
     }
   };
 
-  onSubmit = formValue => {
-    console.log(formValue);
+  onSubmit = async formValue => {
+    this.props.createStream(formValue);
   };
 
   render() {
+    console.log(this.props);
     return (
       <div className={classes.card}>
         <h2>Create a Stream</h2>
@@ -68,4 +72,9 @@ const validate = formValues => {
   return errors;
 };
 
-export default reduxForm({ form: 'StreamCreate', validate })(StreamCreate);
+const formWrap = reduxForm({ form: 'StreamCreate', validate })(StreamCreate);
+
+export default connect(
+  null,
+  { createStream }
+)(formWrap);
