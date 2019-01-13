@@ -39,6 +39,8 @@ class StreamList extends React.Component {
     return null;
   };
 
+  showCreateStreamLink = () => {};
+
   render() {
     return (
       <div className={classes.stream__list}>
