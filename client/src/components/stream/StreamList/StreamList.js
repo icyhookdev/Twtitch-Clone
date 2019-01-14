@@ -18,13 +18,13 @@ class StreamList extends React.Component {
             <h3>{title}</h3>
             <p>{description}</p>
           </Link>
-          {this.showOwnStreamButtons(userId)}
+          {this.showOwnStreamButtons(userId, id)}
         </li>
       );
     });
 
-  showOwnStreamButtons = id => {
-    if (id === this.props.userId) {
+  showOwnStreamButtons = (userId, id) => {
+    if (userId === this.props.userId) {
       return (
         <div className={classes.button__container}>
           <Link to={`/stream/edit/${id}`} className={classes.editButton}>
