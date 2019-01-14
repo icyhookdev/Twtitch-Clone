@@ -62,3 +62,16 @@ a > p {
 .deleteButton {
   background: rgb(238, 35, 69);
 }
+
+.createStream {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  background: dodgerblue;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+}

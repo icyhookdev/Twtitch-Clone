@@ -39,12 +39,21 @@ class StreamList extends React.Component {
     return null;
   };
 
-  showCreateStreamLink = () => {};
+  showCreateStreamLink = () => {
+    if (this.props.isSignedIn) {
+      return (
+        <Link className={classes.createStream} to="/stream/new">
+          Create Stream
+        </Link>
+      );
+    }
+  };
 
   render() {
     return (
       <div className={classes.stream__list}>
         <ul>{this.renderList(this.props)}</ul>
+        {this.showCreateStreamLink()}
       </div>
     );
   }
@@ -52,7 +61,8 @@ class StreamList extends React.Component {
 
 const mapStateToProps = ({ streams, auth }) => ({
   streams: Object.values(streams),
-  userId: auth.userId
+  userId: auth.userId,
+  isSignedIn: auth.isSignedIn
 });
 
 export default connect(

@@ -8,6 +8,7 @@ import {
   EDIT_STREAM
 } from './types';
 import stream from '../api/stream';
+import hisotry from '../history';
 
 export const signIn = (userId, userName, userImg) => {
   return {
@@ -31,6 +32,7 @@ export const createStream = formValues => async (dispatch, getState) => {
   const res = await stream.post('/streams', { ...formValues, userId });
 
   dispatch({ type: CREATE_STREAM, payload: res.data });
+  hisotry.push('/');
 };
 
 export const fetchStreams = () => async dispatch => {

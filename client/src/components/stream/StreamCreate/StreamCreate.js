@@ -29,11 +29,11 @@ class StreamCreate extends React.Component {
   };
 
   onSubmit = async formValue => {
-    this.props.createStream(formValue);
+    await this.props.createStream(formValue);
+    this.props.history.push('/');
   };
 
   render() {
-    console.log(this.props);
     return (
       <div className={classes.card}>
         <h2>Create a Stream</h2>
