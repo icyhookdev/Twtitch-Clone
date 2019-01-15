@@ -64,3 +64,15 @@ html {
   height: 6vh;
   margin-left: 1rem;
 }
+
+.modal {
+  font-size: 1.7rem !important;
+}
+
+.h_title {
+  font-size: 3rem !important;
+}
+
+.bt-size {
+  font-size: 1.3rem !important;
+}

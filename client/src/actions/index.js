@@ -51,10 +51,12 @@ export const deleteStream = id => async dispatch => {
   await stream.delete(`/streams/${id}`);
 
   dispatch({ type: DELETE_STREAM, payload: id });
+  hisotry.push('/');
 };
 
 export const editStream = (id, formValues) => async dispatch => {
-  const res = await stream.put(`/streams/${id}`, formValues);
+  const res = await stream.patch(`/streams/${id}`, formValues);
 
   dispatch({ type: EDIT_STREAM, payload: res.data });
+  hisotry.push('/');
 };
