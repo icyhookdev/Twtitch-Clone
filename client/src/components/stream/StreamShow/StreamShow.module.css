@@ -1,0 +1,11 @@
+.stream__container {
+  padding: 3rem;
+}
+
+.stream__details h2 {
+  font-size: 3.5rem;
+}
+
+.stream__details p {
+  font-size: 1.7rem;
+}

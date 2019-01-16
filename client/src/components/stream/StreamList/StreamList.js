@@ -14,7 +14,7 @@ class StreamList extends React.Component {
     streams.map(({ id, title, description, userId }) => {
       return (
         <li key={id}>
-          <Link className={classes.item} to={`/stream/show/${id}`}>
+          <Link className={classes.item} to={`/stream/${id}`}>
             <h3>{title}</h3>
             <p>{description}</p>
           </Link>
